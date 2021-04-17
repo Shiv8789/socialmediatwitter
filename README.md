@@ -5,5 +5,5 @@ Social Media Twitter
 Social Networking service, where user can register and tweet
 
 # Author and aknowledgement
-Shivling Jadhav
+Shivling Jadhav and
 Abdulrauf Shaikh
