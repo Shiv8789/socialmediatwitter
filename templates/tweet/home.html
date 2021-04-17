@@ -1,0 +1,97 @@
+{% extends "tweet/base.html" %}
+
+{% block content %}
+
+<section class="homesection1">
+  <div class="homenav">
+    <nav class="navbar navbar-expand-lg ">
+      <a class="navbar-brand ml-5" href="{% url 'home' %}" style="font-size: 1.9rem; color: white;transform: translateX(40px);">Twitter</a>
+      <button class="navbar-toggler  custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon" ></span>
+      </button>
+    
+      <div class="collapse navbar-collapse navul" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}">Trending <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'mytweet'%}">Tweet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'about' %}" tabindex="-1" aria-disabled="true">About</a>
+          </li>
+          
+         
+        </ul>
+        <div class="d-flex">
+         
+          <a class="btn btn-primary mr-3 logout" href="{% url 'logout' %}" role="button">Logout</a>
+        </div>
+      </div>
+    </nav>
+
+
+  </div>
+
+  <div class="homecontent container-fluid">
+    <div class="row">
+      <div class="col-md-3 mt-5 leftprofile ">
+        <h1 class="usericon">
+          <i class="fa fa-user-circle"></i>
+        </h1>
+         
+     
+        <div class="d-flex">
+          {{user.first_name}}
+          {{user.last_name}}
+        </div>
+        <div>
+          @{{user.username}}
+        </div>
+      
+        <a class="btn btn-primary " href="{% url 'tweethandle' %}" role="button">My Tweets</a>
+        <a class="btn btn-primary " href="{% url 'mytweet' %}" role="button"> Tweet</a>
+
+
+      </div>
+      <div class="col-md-8 mt-5 ">
+        {% for data in tweet %}
+        <div class="jumbotron jumbotron-fluid rightcontent " data-aos="fade-up-right">
+          <div class="container">
+            <div class="d-flex author" style="transform: translateY(-50px); ">
+              <h4 style="font-weight: bold;">{{data.author.first_name}} {{data.author.last_name}}</h4>
+              <h4 class="ml-3">@{{data.author}}</h4>
+            </div>
+            
+            <p class="lead content" style="font-family: Oswald; font-size: 1.8rem;font-weight: bold;">{{data.content}}.</p>
+            
+          </div>
+          <div class="d-flex justify-content-around " style="transform: translateY(50px);">
+            <h3 class="datetime date" style="transform: translateX(-38px); font-size: 1.4 rem;font-family: Lobster;">
+              {{data.posted_at}}
+            </h3>
+            
+              <!-- <a class="btn btn-primary mr-4 " style="transform: translateX(140px);" href="#" role="button">Edit <i class="bi-pencil"></i></a>
+              <a class="btn btn-primary " href="#" role="button">Delete <i class="bi-trash"></i></a>
+             -->
+            
+          </div>
+        </div>
+        {% endfor %}
+        
+
+        
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+
+
+{% endblock content %}

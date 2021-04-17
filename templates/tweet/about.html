@@ -1,0 +1,87 @@
+{% extends "tweet/base.html" %}
+
+{% block content %}
+
+    <section>
+        <div class="homenav">
+            <nav class="navbar navbar-expand-lg ">
+              <a class="navbar-brand ml-5" href="{% url 'home' %}" style="font-size: 1.9rem; color: white;transform: translateX(40px);">Twitter</a>
+              <button class="navbar-toggler  custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse navul" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Trending <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mytweet'%}">Tweet</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="{% url 'about' %}" tabindex="-1" aria-disabled="true">About</a>
+                  </li>
+                  
+                 
+                </ul>
+                <div class="d-flex">
+                 
+                  <a class="btn btn-primary mr-3 logout" href="{% url 'logout' %}" role="button">Logout</a>
+                </div>
+              </div>
+            </nav>
+        
+        
+          </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-5 ">About Twitter Media</h1>
+              <p style="font-size:2rem; font-weight: 800;" >Twitter is Social Networking service ,It is also microblogging service as well</p>
+            </div>
+        </div>
+        <div class="jumbotron jumbotron-fluid" >
+            <div class="container">
+              <h1 class="display-5 text-center">Individual Members</h1>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="card" style="width: 28rem;">
+                            <div class="card-body">
+                              <h5 class="card-title h2">Shivling Jadhav</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">Software Engineer</h6>
+                              <p class="card-text">Second Year IT Student from Government College of Engineering Karad.</p>
+                              <a href="#" class="card-link" style="font-size: 2rem;"><i class="fab fa-instagram"></i></a>
+                              <a href="https://www.linkedin.com/in/shivling-jadhav" class="card-link" style="font-size: 2rem;"><i class="fab fa-linkedin"></i></a>
+                              <a href="#" class="card-link" style="font-size: 2rem;"><i class="fab fa-facebook"></i></a>
+                              <a href="#" class="card-link" style="font-size: 2rem;"><i class="fab fa-twitter"></i></a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card" style="width: 28rem;">
+                            <div class="card-body">
+                              <h5 class="card-title h2">Abdulrauf Shaikh</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">Software Engineer</h6>
+                              <p class="card-text">Second Year IT Student from Government College of Engineering Karad.</p>
+                              <a href="#" class="card-link" style="font-size: 2rem;"><i class="fab fa-instagram"></i></a>
+                              <a href="https://www.linkedin.com/in/abdulrauf-shaikh-013332204" class="card-link" style="font-size: 2rem;"><i class="fab fa-linkedin"></i></a>
+                              <a href="#" class="card-link" style="font-size: 2rem;"><i class="fab fa-facebook"></i></a>
+                              <a href="#" class="card-link" style="font-size: 2rem;"><i class="fab fa-twitter"></i></a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+          
+    </section>
+  
+{% endblock content %}

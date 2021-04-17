@@ -1,0 +1,101 @@
+
+{% extends "tweet/base.html" %}
+
+
+{% block content %}
+
+    <section class="loginsection1">
+        <div class="homenav">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand ml-5" href="{% url 'home' %}" style="font-size: 1.9rem; color: white;transform: translateX(40px);">Twitter</a>
+              <button class="navbar-toggler  custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+                <span class="navbar-toggler-icon" ></span>
+              </button>
+            
+              <div class="collapse navbar-collapse navul" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Trending <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mytweet'%}">Tweet</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="{% url 'about' %}" tabindex="-1" aria-disabled="true">About</a>
+                  </li>
+                  
+                 
+                </ul>
+                <div class="d-flex">
+                 
+                  <a class="btn btn-primary mr-3 logout" href="{% url 'logout' %}" role="button">Logout</a>
+                </div>
+              </div>
+            </nav>
+        
+        
+          </div>
+          <div class="homecontent container-fluid">
+            <div class="row">
+              <div class="col-md-3 mt-5 leftprofile ">
+                <h1 class="usericon">
+                  <i class="fa fa-user-circle"></i>
+                </h1>
+                 
+             
+                <div class="d-flex">
+                  {{user.first_name}}
+                  {{user.last_name}}
+                </div>
+                <div>
+                  @{{user.username}}
+                </div>
+              
+                <a class="btn btn-primary " href="{% url 'tweethandle' %}" role="button">My Tweets</a>
+        
+        
+              </div>
+              <div class="col-md-8 mt-5 rightcontent">
+               
+                <div class="loginform">
+                    <form action="{% url 'mytweet' %}" method="POST" autocomplete="off">
+                        {% csrf_token %}
+                        <fieldset>
+                            <legend class="text-center">
+                                Tweet here
+                            </legend>
+                            <div class="form-group">
+                               
+                                <textarea type="text" class="form-control"  aria-describedby="emailHelp" name="tweet"  required></textarea>
+                                
+                              </div>
+                             
+                              
+                              <div class="text-center">
+                                  <button type="submit" class="btn btn-primary mr-3">Tweet</button>
+                                  
+                                 </div>
+                        </fieldset>
+                       
+                      </form>
+                
+                </div>
+                
+        
+                
+              </div>
+            </div>
+        
+          </div>
+       
+
+    </section> 
+    
+  
+{% endblock content %}
+
+
+

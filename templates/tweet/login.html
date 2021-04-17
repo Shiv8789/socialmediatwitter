@@ -1,0 +1,41 @@
+
+{% extends "tweet/base.html" %}
+
+
+{% block content %}
+
+    <section class="loginsection1">
+        <div class="loginform">
+            <form action="{% url 'login' %}" method="POST" autocomplete="off">
+                {% csrf_token %}
+                <fieldset>
+                    <legend class="text-center" style="font-size: 1.9rem;">
+                        Twitter Login
+                    </legend>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="loginusername" required>
+                        
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="loginpassword" required>
+                      </div>
+                      
+                      <div class="text-center">
+                          <button type="submit" class="btn btn-primary mr-3">Login</button>
+                          <a class="btn btn-outline-primary" href="{% url 'signup' %}" role="button">Sign UP</a>
+                         </div>
+                </fieldset>
+               
+              </form>
+
+        </div>
+       
+
+    </section>
+  
+{% endblock content %}
+
+
+

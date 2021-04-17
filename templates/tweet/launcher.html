@@ -1,0 +1,40 @@
+
+{% extends "tweet/base.html" %}
+
+
+{% block content %}
+
+    <section class="section1">
+        <div class="container-fluid launcher1">
+           <div class="launchernavbar">
+             <nav class="navbar navbar-expand-lg ">
+                <a class="navbar-brand ml-md-4" href="#">Twitter</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+               <div class="ml-auto logsign">
+                <a class="btn btn-primary nav-pills mx-md-3 login" href="{% url 'login' %}" role="button">Login</a>
+                <a class="btn btn-outline-primary nav-pills signup" href="{% url 'signup' %}" role="button">Sign Up</a>
+               </div>
+                
+             </nav>
+
+            </div>
+            <div class="lefttext1">
+                <div class="text1">
+                   <span class="typed"></span>
+                </div>
+                
+                <a class="btn btn-primary nav-item join" href="{% url 'signup' %}" role="button">Join Today</a>
+            </div>
+
+           
+
+            
+
+        </div>
+
+    </section>
+  
+{% endblock content %}

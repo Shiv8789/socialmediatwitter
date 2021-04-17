@@ -1,0 +1,1 @@
+web: gunicorn socialmediatwitter.wsgi --log-file - 
